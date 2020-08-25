@@ -15,22 +15,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btn_result.setOnClickListener(this)
     }
     private fun getFibonacciSeries(number: Int) {
+        var previous = 0
+        var current = 1
+        var next: Int
         when (number) {
             0 -> {
-                tv_result.text = "0"
+                tv_result.text = getString(R.string.result_is,previous.toString())
                 return
             }
             1 -> {
-                tv_result.text = "1"
+                tv_result.text = getString(R.string.result_is,current.toString())
                 return
             }
             else -> {
-                var previous = 0
-                var current = 1
-                var next: Int
                 var result = ""
                 result = result.plus(previous).plus(" ").plus(current)
-                for ( x in 2 until number){
+                for ( x in 1 until number){
                     next = previous+current
                     previous = current
                     current = next
@@ -45,6 +45,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if (TextUtils.isEmpty(et_number.text.toString()))
             Toast.makeText(this,getString(R.string.please_enter_number),Toast.LENGTH_SHORT).show()
         else
-            getFibonacciSeries(et_number.text.toString().toInt()).toString()
+            getFibonacciSeries(et_number.text.toString().toInt())
     }
 }
