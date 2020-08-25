@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Fibonacci Series</string>
+    <string name="enter_number">Enter Number</string>
+    <string name="submit">Submit</string>
+    <string name="result_is" formatted="false">Result is %s</string>
+    <string name="please_enter_number">Please enter number</string>
+</resources>
